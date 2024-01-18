@@ -1,0 +1,2 @@
+logo, slider, menu, sub_menu, messages, about_us, contact, notice, important_links, news, gallery, class_routine, syllabus,
+class/department, teachers, students, institute comitee, other staff, 
