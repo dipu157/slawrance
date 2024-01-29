@@ -11,8 +11,8 @@
                     @csrf
                     <div class="row">
 
-                        <input type="hidden" name="id" id="ins_id">
-                        <input type="hidden" name="emp_photo" id="ins_logo">
+                        <input type="text" name="id" id="ins_id">
+                        <input type="text" name="ins_photo" id="ins_logo">
 
                         <div class="col-md-6 mt-3">
                           <div class="form-group">
@@ -36,14 +36,9 @@
                             </div>
 
                             <div class="form-group">
-                              <label>Linkedin Link</label>
-                              <input type="text" class="form-control" name="social_link2" id="social_link2">
+                                <label>Google Map Link</label>
+                                <textarea class="form-control" cols="50" rows="2" name="map_link" id="map_link"></textarea>
                             </div>
-
-                          <div class="form-group">
-                              <label>Address</label>
-                              <textarea class="form-control" cols="50" rows="2" name="address" id="address"></textarea>
-                          </div>
                       </div>
 
                        <div class="col-md-6 mt-3">
@@ -51,21 +46,6 @@
                               <label>Phone</label>
                               <input type="text" class="form-control" name="phone" id="phone">
                             </div>
-
-                          <div class="form-group">
-                              <label>City</label>
-                              <input type="text" class="form-control" name="city" id="city">
-                          </div>
-
-                          <div class="form-group">
-                              <label>State</label>
-                              <input type="text" class="form-control" name="state" id="state">
-                          </div>
-
-                          <div class="form-group">
-                              <label>Post Code</label>
-                              <input type="text" class="form-control" name="post_code" id="post_code">
-                          </div>
 
                           <div class="form-group">
                               <label>Twitter Link</label>
@@ -78,18 +58,14 @@
                             </div>
 
                             <div class="form-group">
-                              <label>Google Map Link</label>
-                              <textarea class="form-control" cols="50" rows="2" name="map_link" id="map_link"></textarea>
-                          </div>                          
-                      </div>
+                                <label>Linkedin Link</label>
+                                <input type="text" class="form-control" name="social_link2" id="social_link2">
+                              </div>
 
-                      <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>History</label>
-                                <textarea class="form-control" cols="50" rows="2" name="history" id="history"></textarea>
-                            </div>
-                        </div>
+                          <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" cols="50" rows="2" name="address" id="address"></textarea>
+                          </div>
                       </div>
 
                          <div class="col-md-12">
@@ -101,7 +77,7 @@
                                 </div>
                               </div>
                               <div class="col-md-6" id="logo_img">
-                                <span id="logo">
+                                <span id="photospan">
                                   <img id="output" height="120px" width="100px" />
                                 </span>
                               </div>
@@ -123,10 +99,9 @@
     var loadFile = function(event) {
         var reader = new FileReader();
         reader.onload = function(){
-          var output = document.getElementById('output');
-          output.src = reader.result;
+        var output = document.getElementById('output');
+        output.src = reader.result;
         };
         reader.readAsDataURL(event.target.files[0]);
     };
-
-  </script>
+</script>

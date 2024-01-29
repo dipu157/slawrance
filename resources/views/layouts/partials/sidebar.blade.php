@@ -2,10 +2,10 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('/')}}images/logo-icon.png" class="logo-icon" alt="logo icon">
+            <img src="{{asset('/')}}images/logo-img.jpg" class="logo-icon" alt="logo icon">
         </div>
         <div>
-            <h6>Barobazar Degree College</h6>
+            <h6>St.Lawrence School of jewels</h6>
         </div>
         <div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
         </div>

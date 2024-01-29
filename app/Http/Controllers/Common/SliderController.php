@@ -44,7 +44,7 @@ class SliderController extends Controller
             <tbody>';
             foreach ($bMember as $bm) {
                 // Generate the image URL
-                $defaultImage = asset('storage/images/1694713766.jpg');
+                $defaultImage = asset('storage/images/1706522691.jpg');
                 $imageUrl = asset('storage/images/Slider/'.$bm->image);
                 $imageSrc =  $bm->image ? $imageUrl : $defaultImage;
 

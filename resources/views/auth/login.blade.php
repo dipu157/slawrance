@@ -18,7 +18,7 @@
 	<link href="{{asset('/')}}css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{asset('/')}}css/app.css" rel="stylesheet">
 	<link href="{{asset('/')}}css/icons.css" rel="stylesheet">
-	<title>EduSite Login</title>
+	<title>St.Lawrence Login</title>
 </head>
 
 <body class="bg-login">
@@ -29,7 +29,7 @@
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 					<div class="col mx-auto">
 						<div class="mb-4 text-center">
-							<img src="{{asset('/')}}images/logo-img.png" width="180" alt="" />
+							<img src="{{asset('/')}}images/logo-img.jpg" width="180" alt="" />
 						</div>
 						<div class="card">
 							<div class="card-body">

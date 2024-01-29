@@ -16,8 +16,7 @@ class InfoSeeder extends Seeder
         DB::table('institute_infos')->insert([
             'name' => 'Your College Name',
             'phone' => '000 00 000',
-            'email' => 'admin@barobazar.com',
-            'history' => 'History Goes Here',
+            'email' => 'admin@slawrence.com',
             'created_at'=>'2023-01-27 11:31:21',
             'updated_at'=>'2023-01-27 11:31:43'
         ]);

@@ -64,38 +64,6 @@ class InstituteController extends Controller
     }
 
 
-    public function create(Request $request)
-    {
-
-        $file = $request->file('logo');
-        $filename = time().'.'.$file->getClientOriginalExtension();
-        $file->storeAs('public/images', $filename);
-
-        $insData = [
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'logo' => $filename,
-            'social_link1' => $request->social_link1,
-            'social_link2' => $request->social_link2,
-            'social_link3' => $request->social_link3,
-            'social_link4' => $request->social_link4,
-            'map_link' => $request->map_link,
-            'city' => $request->city,
-            'state' => $request->state,
-            'post_code' => $request->post_code,
-            'address' => $request->address,
-            'website' => $request->website,
-            'history' => $request->history,
-            
-        ];
-
-        //dd($insData);
-
-        InstituteInfo::create($insData);
-        return response()->json(['status' => 200]);
-    }
-
     public function edit(Request $request){
 
         $id = $request->id;
@@ -115,10 +83,10 @@ class InstituteController extends Controller
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/images', $fileName);
             if ($ins->logo) {
-                Storage::delete('public/images/' . $ins->logo);
+                Storage::delete('public/images/'.$ins->logo);
             }
         } else {
-            $fileName = $request->emp_photo;
+            $fileName = $request->ins_photo;
         }
 
         $insData = [
@@ -131,12 +99,7 @@ class InstituteController extends Controller
             'social_link3' => $request->social_link3,
             'social_link4' => $request->social_link4,
             'map_link' => $request->map_link,
-            'city' => $request->city,
-            'state' => $request->state,
-            'post_code' => $request->post_code,
-            'address' => $request->address,
             'website' => $request->website,
-            'history' => $request->history,
             'logo' => $fileName
         ];
 
