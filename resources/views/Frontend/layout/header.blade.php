@@ -45,7 +45,7 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
-                <h1 class="m-0 text-primary">{{ $institute->name }}</h1>
+                <h1 class="m-0 text-primary"><img class="img-fluid" src="{{asset('storage/images/'.$institute->logo)}}" width="80px" alt="">{{ $institute->name }}</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
