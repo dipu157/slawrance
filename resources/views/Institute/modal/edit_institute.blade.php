@@ -11,8 +11,8 @@
                     @csrf
                     <div class="row">
 
-                        <input type="text" name="id" id="ins_id">
-                        <input type="text" name="ins_photo" id="ins_logo">
+                        <input type="hidden" name="id" id="ins_id">
+                        <input type="hidden" name="ins_photo" id="ins_logo">
 
                         <div class="col-md-6 mt-3">
                           <div class="form-group">
@@ -32,7 +32,7 @@
 
                             <div class="form-group">
                               <label>Facebook Link</label>
-                              <input type="text" class="form-control" name="social_link1" id="social_link1">
+                              <input type="text" class="form-control" name="social_link1" id="facebook">
                             </div>
 
                             <div class="form-group">
@@ -49,17 +49,17 @@
 
                           <div class="form-group">
                               <label>Twitter Link</label>
-                              <input type="text" class="form-control" name="social_link3" id="social_link3">
+                              <input type="text" class="form-control" name="social_link3" id="twitter">
                             </div>
 
                             <div class="form-group">
                               <label>Youtube Link</label>
-                              <input type="text" class="form-control" name="social_link4" id="social_link4">
+                              <input type="text" class="form-control" name="social_link4" id="youtube">
                             </div>
 
                             <div class="form-group">
                                 <label>Linkedin Link</label>
-                                <input type="text" class="form-control" name="social_link2" id="social_link2">
+                                <input type="text" class="form-control" name="social_link2" id="linkedin">
                               </div>
 
                           <div class="form-group">

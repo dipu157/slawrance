@@ -65,10 +65,10 @@ $(document).ready(function() {
 			$("#name").val(res.name);
 			$("#email").val(res.email);
 			$("#address").val(res.address);
-            $("#social_link1").val(res.social_link1);
-            $("#social_link2").val(res.social_link2);
-            $("#social_link3").val(res.social_link3);
-            $("#social_link4").val(res.social_link4);
+            $("#facebook").val(res.social_link1);
+            $("#linkedin").val(res.social_link2);
+            $("#twitter").val(res.social_link3);
+            $("#youtube").val(res.social_link4);
             $("#map_link").val(res.map_link);
 			$("#phone").val(res.phone);
 			$("#website").val(res.website);
