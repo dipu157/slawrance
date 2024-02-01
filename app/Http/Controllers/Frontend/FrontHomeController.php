@@ -20,7 +20,7 @@ class FrontHomeController extends Controller
     public function index()
     {
         $institute = InstituteInfo::query()->where('id', 1)->first();
-        $menus = Menu::query()->where('status', 1)->get();
+        $menus = Menu::query()->where('status', 1)->orderBy('position')->get();
         $submenu = Sub_Menu::query()->where('status', 1)->get();
         $notice = Notice::query()->where('status', 1)->take(10)->get();
         $sliders = Slider::query()->where('status', 1)->take(3)->get();

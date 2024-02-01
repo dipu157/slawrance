@@ -20,6 +20,11 @@
                                 <label>Slug</label>
                                 <input type="text" class="form-control" name="slug" placeholder="Enter Slug">
                             </div>
+
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="number" class="form-control" name="position" placeholder="1 or 2 or 3 ....">
+                            </div>
                         </div>
 
                       </div>

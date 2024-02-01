@@ -15,12 +15,17 @@
                         <div class="col-md-12 mt-2 p-2">
                             <div class="form-group">
                               <label>Menu Name</label>
-                              <input type="text" class="form-control" id="name" name="name" placeholder="Enter Menu Name">
+                              <input type="text" class="form-control" id="name" name="name" >
                             </div>
 
                             <div class="form-group">
                                 <label>Slug</label>
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Menu Slug">
+                                <input type="text" class="form-control" id="slug" name="slug" >
+                            </div>
+
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="number" class="form-control" id="position" name="position">
                             </div>
                         </div>
 

@@ -16,8 +16,18 @@ class Menu extends Model
     protected $fillable = [
         'name',
         'slug',
-        'image',
+        'position',
         'status',
         'user_id',
     ];
+
+    public function submenus()
+    {
+        return $this->hasMany(Sub_Menu::class, 'menu_id', 'id');
+    }
+
+    public function hasSubmenus()
+    {
+        return $this->submenus->isNotEmpty();
+    }
 }

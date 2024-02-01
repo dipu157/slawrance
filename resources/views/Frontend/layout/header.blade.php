@@ -52,13 +52,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                        </div>
-                    </div>
+                    @foreach($menus as $menu)
+                        @if($menu->hasSubmenus())
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ $menu->name }}</a>
+                                <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                                    @foreach($submenu->where('menu_id', $menu->id) as $sub)
+                                        <a href="{{ $sub->url }}" class="dropdown-item">{{ $sub->name }}</a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @else
+                            <a href="{{ $menu->url }}" class="nav-item nav-link active">{{ $menu->name }}</a>
+                        @endif
+                    @endforeach
+
                 </div>
             </div>
         </nav>

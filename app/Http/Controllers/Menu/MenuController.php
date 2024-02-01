@@ -40,7 +40,7 @@ class MenuController extends Controller
                 <th>ID</th>
                 <th>Name</th>
                 <th>Slug</th>
-                <th>Status</th>
+                <th>Position</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -50,7 +50,7 @@ class MenuController extends Controller
                 <td>'.$bm->id.'</td>
                 <td>'. $bm->name.'</td>
                 <td>'. $bm->slug.'</td>
-                <td>'.$bm->status.'</td>
+                <td>'.$bm->position.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editMenuModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
 
@@ -70,6 +70,7 @@ class MenuController extends Controller
         $bData = [
             'name' => $request->name,
             'slug' => $request->slug,
+            'position' => $request->position,
             'user_id' => $this->user_id,
         ];
 
@@ -94,6 +95,7 @@ class MenuController extends Controller
         $bData = [
             'name' => $request->name,
             'slug' => $request->slug,
+            'position' => $request->position,
             'user_id' => $this->user_id,
         ];
 
