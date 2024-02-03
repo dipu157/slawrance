@@ -7,9 +7,9 @@
     <div class="page-content">
         <!--breadcrumb-->
         <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-            <div class="breadcrumb-title pe-3">Message</div>
+            <div class="breadcrumb-title pe-3">Testimonial</div>
             <div class="ms-auto"><button class="btn btn-primary radius-30 mt-2 mt-lg-0" data-bs-toggle="modal" data-bs-target="#addMessageModal">
-                <i class="bx bxs-plus-square"></i>Add Message</button></div>
+                <i class="bx bxs-plus-square"></i>Add Testimonial</button></div>
         </div>
         <!--end breadcrumb-->
 

@@ -120,7 +120,6 @@ class MessageController extends Controller
             'position' => $request->position,
             'message' => $request->message,
             'photo' => $fileName,
-            'message' => $request->message,
             'user_id' => $this->user_id,
         ];
 
@@ -136,6 +135,6 @@ class MessageController extends Controller
         if (Storage::delete('public/message/' . $member->photo)) {
             Messages::destroy($id);
         }
-        
+
     }
 }
