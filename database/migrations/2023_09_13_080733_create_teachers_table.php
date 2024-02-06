@@ -15,12 +15,9 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name',150);
             $table->string('position',150);
-            $table->string('class_department',150);
             $table->string('photo',150)->nullable();
             $table->string('email',190)->nullable();
             $table->string('mobile',150)->nullable();
-            $table->date('dob')->nullable();
-            $table->date('joining_date')->nullable();
             $table->char('gender',1)->comments('M=> Male, F=>Female');
             $table->char('blood_group',30)->nullable();
             $table->boolean('status')->default(1);

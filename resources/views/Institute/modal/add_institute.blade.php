@@ -54,21 +54,6 @@
                                 <input type="text" class="form-control" name="phone" placeholder="Enter Phone">
                               </div>
 
-                            {{-- <div class="form-group">
-                                <label>City</label>
-                                <input type="text" class="form-control" name="city" placeholder="Enter City">
-                            </div>
-
-                            <div class="form-group">
-                                <label>State</label>
-                                <input type="text" class="form-control" name="state" placeholder="Enter state">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Post Code</label>
-                                <input type="text" class="form-control" name="post_code" placeholder="Enter post_code">
-                            </div> --}}
-
                             <div class="form-group">
                             <label>Twitter Link</label>
                             <input type="text" class="form-control" name="social_link3" placeholder="Enter Twitter Link">

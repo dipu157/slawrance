@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('news', function (Blueprint $table) {
+        Schema::create('classes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('headline',50);
-            $table->string('attachment',150)->nullable();
-            $table->string('short_description',240)->nullable();
-            $table->string('description',600)->nullable();
+            $table->string('class_teacher_name',150);
+            $table->string('position',150);
+            $table->string('photo',150)->nullable();
+            $table->string('class_name',10);
+            $table->string('image',150)->nullable();
+            $table->string('student_age',10)->nullable();
+            $table->string('class_time',10)->nullable();
+            $table->string('capacity',10)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');

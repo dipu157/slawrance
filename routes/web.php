@@ -2,12 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\InstituteInfo\ClassesController;
 use App\Http\Controllers\Common\MessageController;
 use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\Common\SliderController;
 use App\Http\Controllers\Menu\SubMenuController;
 use App\Http\Controllers\Frontend\FrontHomeController;
-use App\Http\Controllers\Institute\InstituteController;
+use App\Http\Controllers\InstituteInfo\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
 use App\Http\Controllers\Menu\MenuPageController;
@@ -152,12 +153,20 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::delete('/deleteInotice', [NoticeController::class, 'deleteInotice'])->name('deleteInotice');
 
     //  News Manage Route
-    Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
-    Route::get('/newsData', [NewsController::class, 'getAllNews'])->name('newsData');
-    Route::post('/savenews', [NewsController::class, 'create'])->name('savenews');
-    Route::get('/editnews', [NewsController::class, 'edit'])->name('editnews');
-    Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
-    Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
+    // Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
+    // Route::get('/newsData', [NewsController::class, 'getAllNews'])->name('newsData');
+    // Route::post('/savenews', [NewsController::class, 'create'])->name('savenews');
+    // Route::get('/editnews', [NewsController::class, 'edit'])->name('editnews');
+    // Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
+    // Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
+
+    // Class Manage Route
+    Route::get('/classesIndex',[ClassesController::class, 'index'])->name('manageClasses');
+    Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
+    Route::post('/saveclasses', [ClassesController::class, 'create'])->name('saveclasses');
+    // Route::get('/editclasses', [ClassesController::class, 'edit'])->name('editclasses');
+    // Route::post('/updateclasses', [ClassesController::class, 'update'])->name('updateclasses');
+    // Route::delete('/deleteclasses', [ClassesController::class, 'delete'])->name('deleteclasses');
 
     //  events Manage Route
     Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');

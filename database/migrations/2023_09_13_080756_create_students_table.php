@@ -17,11 +17,10 @@ return new class extends Migration
             $table->string('father_name',100)->nullable();
             $table->string('mother_name',100)->nullable();
             $table->string('roll',150);
-            $table->string('class_department',150);
-            $table->string('class_department_start',150);
+            $table->string('current_class',150);
+            $table->string('admission_class',150);
             $table->string('photo',150)->nullable();
-            $table->string('email',190)->nullable();
-            $table->string('mobile',150)->nullable();
+            $table->string('emergency_mobile',150)->nullable();
             $table->date('dob')->nullable();
             $table->char('gender',1)->comments('M=> Male F=>Female');
             $table->char('blood_group',30)->nullable();
