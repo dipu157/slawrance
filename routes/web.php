@@ -163,10 +163,10 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     // Class Manage Route
     Route::get('/classesIndex',[ClassesController::class, 'index'])->name('manageClasses');
     Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
-    Route::post('/saveclasses', [ClassesController::class, 'create'])->name('saveclasses');
-    // Route::get('/editclasses', [ClassesController::class, 'edit'])->name('editclasses');
-    // Route::post('/updateclasses', [ClassesController::class, 'update'])->name('updateclasses');
-    // Route::delete('/deleteclasses', [ClassesController::class, 'delete'])->name('deleteclasses');
+    Route::post('/saveclass', [ClassesController::class, 'create'])->name('saveclass');
+    Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
+    Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
+    Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
 
     //  events Manage Route
     Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');

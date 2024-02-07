@@ -63,5 +63,76 @@ class ClassesController extends Controller
         }
     }
 
+    public function create(Request $request)
+    {
+
+        $file = $request->file('photo');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/teacher', $filename);
+
+        $filename2 = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/classRoom', $filename2);
+
+        $bData = [
+            'class_teacher_name' => $request->class_teacher_name,
+            'position' => $request->position,
+            'photo' => $filename,
+            'class_name' => $request->class_name,
+            'image' => $filename2,
+            'student_age' => $request->student_age,
+            'class_time' => $request->class_time,
+            'capacity' => $request->capacity,
+            'user_id' => $this->user_id,
+        ];
+
+        //dd($insData);
+
+        Classes::create($bData);
+        return response()->json(['status' => 200]);
+    }
+
+    public function edit(Request $request){
+
+      $id = $request->id;
+      $ins = Classes::find($id);
+      //dd($ins);
+      return response()->json($ins);
+  }
+
+  // handle update an class ajax request
+  public function update(Request $request) {
+
+      $fileName = '';
+      $ins = Classes::find($request->id);
+
+      if ($request->hasFile('logo')) {
+          $file = $request->file('logo');
+          $fileName = time() . '.' . $file->getClientOriginalExtension();
+          $file->storeAs('public/images', $fileName);
+          if ($ins->logo) {
+              Storage::delete('public/images/'.$ins->logo);
+          }
+      } else {
+          $fileName = $request->ins_photo;
+      }
+
+      $insData = [
+        'class_teacher_name' => $request->class_teacher_name,
+        'position' => $request->position,
+        'photo' => $fileName,
+        'class_name' => $request->class_name,
+        'image' => $filename2,
+        'student_age' => $request->student_age,
+        'class_time' => $request->class_time,
+        'capacity' => $request->capacity,
+        'user_id' => $this->user_id,
+      ];
+
+      $ins->update($insData);
+      return response()->json([
+          'status' => 200,
+      ]);
+  }
+
 
 }
