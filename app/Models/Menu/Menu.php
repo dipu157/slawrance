@@ -15,7 +15,6 @@ class Menu extends Model
 
     protected $fillable = [
         'name',
-        'slug',
         'position',
         'status',
         'user_id',

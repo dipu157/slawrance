@@ -26,15 +26,15 @@ class MenuSeeder extends Seeder
 
         $menus = [
             [
-                'name' => 'About Us', 
-                'slug' => 'about_us', 
+                'name' => 'Home', 
+                'position' => 1, 
                 'user_id' => 1,
                 'created_at'=>'2023-01-27 11:31:21', 
                 'updated_at'=>'2023-01-27 11:31:43'
             ],
             [
                 'name' => 'Academic', 
-                'slug' => 'academic', 
+                'position' => 2, 
                 'user_id' => 1,
                 'created_at'=>'2023-01-27 11:31:21', 
                 'updated_at'=>'2023-01-27 11:31:43'

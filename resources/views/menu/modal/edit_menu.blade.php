@@ -19,11 +19,6 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Slug</label>
-                                <input type="text" class="form-control" id="slug" name="slug" >
-                            </div>
-
-                            <div class="form-group">
                                 <label>Position</label>
                                 <input type="number" class="form-control" id="position" name="position">
                             </div>

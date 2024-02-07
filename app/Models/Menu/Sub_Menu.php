@@ -16,8 +16,7 @@ class Sub_Menu extends Model
     protected $fillable = [
         'menu_id',
         'name',
-        'image',
-        'slug',
+        'position',
         'status',
         'user_id',
     ];

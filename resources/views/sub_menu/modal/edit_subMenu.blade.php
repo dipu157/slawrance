@@ -24,8 +24,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Slug</label>
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug">
+                                <label>Position</label>
+                                <input type="number" class="form-control" id="position" name="position" placeholder="Enter Position">
                             </div>
                         </div>
 

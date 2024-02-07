@@ -69,7 +69,7 @@ class SubMenuController extends Controller
         $bData = [
             'menu_id' => $request->menu_id,
             'name' => $request->name,
-            'slug' => $request->slug,
+            'position' => $request->position,
             'user_id' => $this->user_id,
         ];
 
@@ -94,7 +94,7 @@ class SubMenuController extends Controller
         $bData = [
             'menu_id' => $request->menu_id,
             'name' => $request->name,
-            'slug' => $request->slug,
+            'position' => $request->position,
             'user_id' => $this->user_id,
         ];
 

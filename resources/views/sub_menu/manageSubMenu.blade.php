@@ -134,7 +134,7 @@ $(document).on('click', '.deleteIcon', function(e) {
             $("#bmem_id").val(res.id);
             $("#menu_id").val(res.menu_id);
 			$("#name").val(res.name);
-			$("#slug").val(res.slug);
+			$("#position").val(res.position);
 		}
 		});
 		});

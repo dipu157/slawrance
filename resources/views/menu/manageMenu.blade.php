@@ -133,7 +133,6 @@ $(document).on('click', '.deleteIcon', function(e) {
 
             $("#bmem_id").val(res.id);
 			$("#name").val(res.name);
-			$("#slug").val(res.slug);
             $("#position").val(res.position);
 			$("#link").val(res.link);
 		}
