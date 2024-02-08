@@ -46,17 +46,18 @@
             </a>
             <ul>
                 <li> <a href="{{ route('manageInstitute') }}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a></li>
+                <li> <a href="{{route('manageClasses')}}"><i class="bx bx-right-arrow-alt"></i>Manage Classes</a></li>
             </ul>
         </li>
         <li>
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-user-circle'></i>
                 </div>
-                <div class="menu-title">Members</div>
+                <div class="menu-title">Testimonial</div>
             </a>
             <ul>
-                <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
-                <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li>
+                {{-- <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
+                <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li> --}}
                 <li> <a href="{{ route('messageIndex') }}"><i class="bx bx-right-arrow-alt"></i>Testimonial</a></li>
             </ul>
         </li>
@@ -93,9 +94,9 @@
             </a>
             <ul>
                 <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
-                <li> <a href="{{route('manageClasses')}}"><i class="bx bx-right-arrow-alt"></i>Manage Classes</a></li>
-                <li> <a href="{{route('manageEvents')}}"><i class="bx bx-right-arrow-alt"></i>Manage Events</a></li>
-                <li> <a href="{{route('manageInotice')}}"><i class="bx bx-right-arrow-alt"></i>Important Notice</a></li>
+                
+                {{-- <li> <a href="{{route('manageEvents')}}"><i class="bx bx-right-arrow-alt"></i>Manage Events</a></li>
+                <li> <a href="{{route('manageInotice')}}"><i class="bx bx-right-arrow-alt"></i>Important Notice</a></li> --}}
             </ul>
         </li>
 

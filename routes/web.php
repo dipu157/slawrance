@@ -56,6 +56,14 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
     Route::get('/editInstitute', [InstituteController::class, 'edit'])->name('editInstitute');
     Route::post('/InstituteUpdate', [InstituteController::class, 'update'])->name('InstituteUpdate');
 
+    // Class Manage Route
+    Route::get('/classesIndex',[ClassesController::class, 'index'])->name('manageClasses');
+    Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
+    Route::post('/saveclass', [ClassesController::class, 'create'])->name('saveclass');
+    Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
+    Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
+    Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
+
 
 });
 
@@ -145,12 +153,12 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     Route::delete('/deletenotice', [NoticeController::class, 'delete'])->name('deleteNotice');
 
     //  Important Notice Route
-    Route::get('/inoticeIndex',[NoticeController::class, 'inoticeIndex'])->name('manageInotice');
-    Route::get('/inoticeData', [NoticeController::class, 'getAllInotice'])->name('inoticeData');
-    Route::post('/saveInotice', [NoticeController::class, 'createInotice'])->name('saveInotice');
-    Route::get('/editInotice', [NoticeController::class, 'editInotice'])->name('editInotice');
-    Route::post('/updateInotice', [NoticeController::class, 'updateInotice'])->name('updateInotice');
-    Route::delete('/deleteInotice', [NoticeController::class, 'deleteInotice'])->name('deleteInotice');
+    // Route::get('/inoticeIndex',[NoticeController::class, 'inoticeIndex'])->name('manageInotice');
+    // Route::get('/inoticeData', [NoticeController::class, 'getAllInotice'])->name('inoticeData');
+    // Route::post('/saveInotice', [NoticeController::class, 'createInotice'])->name('saveInotice');
+    // Route::get('/editInotice', [NoticeController::class, 'editInotice'])->name('editInotice');
+    // Route::post('/updateInotice', [NoticeController::class, 'updateInotice'])->name('updateInotice');
+    // Route::delete('/deleteInotice', [NoticeController::class, 'deleteInotice'])->name('deleteInotice');
 
     //  News Manage Route
     // Route::get('/newsIndex',[NewsController::class, 'index'])->name('manageNews');
@@ -160,13 +168,7 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     // Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
     // Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
 
-    // Class Manage Route
-    Route::get('/classesIndex',[ClassesController::class, 'index'])->name('manageClasses');
-    Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
-    Route::post('/saveclass', [ClassesController::class, 'create'])->name('saveclass');
-    Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
-    Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
-    Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
+    
 
     //  events Manage Route
     Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');

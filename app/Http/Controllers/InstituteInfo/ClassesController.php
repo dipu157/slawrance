@@ -36,9 +36,11 @@ class ClassesController extends Controller
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Headline</th>
-                <th>Short Description</th>
-                <th>Description</th>
+                <th>Class</th>
+                <th>Teacher Info</th>
+                <th>Student AgeLimit</th>
+                <th>Class Time</th>
+                <th>Capacity</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -46,9 +48,11 @@ class ClassesController extends Controller
             foreach ($classes as $bm) {
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
-                <td>'. $bm->headline.'</td>
-                <td>'.$bm->short_description.'</td>
-                <td>'.$bm->description.'</td>
+                <td>'. $bm->class_name.'</td>
+                <td>'.$bm->class_teacher_name.'<br/>'.$bm->position.'</td>
+                <td>'.$bm->student_age.' Years'.'</td>
+                <td>'.$bm->class_time.'</td>
+                <td>'.$bm->capacity.' kids'.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editClassModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
 
