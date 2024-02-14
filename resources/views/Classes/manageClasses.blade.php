@@ -82,89 +82,94 @@ $(document).ready(function() {
 
 
     // delete employee ajax request
-    // $(document).on('click', '.deleteIcon', function(e) {
-	// 	e.preventDefault();
-    //     console.log("Delete Button Clicked");
-	// 	let id = $(this).attr('id');
-	// 	let csrf = '{{ csrf_token() }}';
-	// 	Swal.fire({
-	// 		title: 'Are you sure?',
-	// 		text: "You won't be able to revert this!",
-	// 		icon: 'warning',
-	// 		showCancelButton: true,
-	// 		confirmButtonColor: '#3085d6',
-	// 		cancelButtonColor: '#d33',
-	// 		confirmButtonText: 'Yes, delete it!'
-	// 	}).then((result) => {
-	// 	if (result.isConfirmed) {
-	// 	$.ajax({
-	// 		url: '{{ route('deleteclass') }}',
-	// 		method: 'delete',
-	// 		data: {
-	// 		id: id,
-	// 		_token: csrf
-	// 	},
-	// 	success: function(response) {
-	// 		console.log(response);
-	// 		Swal.fire(
-	// 		'Deleted!',
-	// 		'Your file has been deleted.',
-	// 		'success'
-	// 		)
-	// 		fetchAllClass();
-	// 	}
-	// 	});
-	// 	}
-	// 	})
-	// });
+     $(document).on('click', '.deleteIcon', function(e) {
+	 	e.preventDefault();
+         console.log("Delete Button Clicked");
+	 	let id = $(this).attr('id');
+	 	let csrf = '{{ csrf_token() }}';
+	 	Swal.fire({
+	 		title: 'Are you sure?',
+	 		text: "You won't be able to revert this!",
+	 		icon: 'warning',
+	 		showCancelButton: true,
+	 		confirmButtonColor: '#3085d6',
+	 		cancelButtonColor: '#d33',
+	 		confirmButtonText: 'Yes, delete it!'
+	 	}).then((result) => {
+	 	if (result.isConfirmed) {
+		$.ajax({
+	 		url: '{{ route('deleteclass') }}',
+	 		method: 'delete',
+	 		data: {
+	 		id: id,
+	 		_token: csrf
+	 	},
+	 	success: function(response) {
+	 		console.log(response);
+	 		Swal.fire(
+	 		'Deleted!',
+	 		'Your file has been deleted.',
+	 		'success'
+	 		)
+	 		fetchAllClass();
+	 	}
+	 	});
+	 	}
+	 	})
+	 });
 
     //Edit Icon click for Employee Edit
-		// $(document).on('click', '.editIcon', function(e){
-		// e.preventDefault();
-		// let id = $(this).attr('id');
-        // console.log(id + "Clicked");
-		// $.ajax({
-		// url: '{{ route('editclass') }}',
-		// method: 'get',
-		// data: {
-		// id: id,
-		// _token: '{{ csrf_token() }}'
-		// },
-		// success: function(res){
-		// 	console.log(res);
+		 $(document).on('click', '.editIcon', function(e){
+		 e.preventDefault();
+		 let id = $(this).attr('id');
+         console.log(id + "Clicked");
+		 $.ajax({
+		 url: '{{ route('editclass') }}',
+		 method: 'get',
+		 data: {
+		    id: id,
+		    _token: '{{ csrf_token() }}'
+		 },
+		 success: function(res){
+		 	console.log(res);
 
-        //     $("#bmem_id").val(res.id);
-		// 	$("#headline").val(res.headline);
-		// 	$("#short_description").val(res.short_description);
-		// 	$("#description").val(res.description);
-		// }
-		// });
-		// });
+            $("#cls_id").val(res.id);
+		 	$("#class_name").val(res.class_name);
+		 	$("#position").val(res.position);
+		 	$("#student_age").val(res.student_age);
+		 	$("#class_teacher_name").val(res.class_teacher_name);
+		 	$("#class_time").val(res.class_time);
+		 	$("#capacity").val(res.capacity);
+		 	$("#cls_photo").val(res.photo);
+		 	$("#teacher_photo").val(res.image);
+		 }
+		 });
+		 });
 
         // update employee ajax request
-	// $("#classEditForm").submit(function(e) {
-	// e.preventDefault();
-	// const fd = new FormData(this);
-	// $("#btnupdate").text('Updating...');
-	// 	$.ajax({
-	// 		url: '{{ route('updateclass') }}',
-	// 		method: 'post',
-	// 		data: fd,
-	// 		cache: false,
-	// 		contentType: false,
-	// 		processData: false,
-	// 		dataType: 'json',
-	// 	success: function(response) {
-	// 		if (response.status == 200) {
-    //             toastr.success('Update Successfully');
-	// 			fetchAllNews();
-	// 		}
-	// 		$("#btnupdate").text('Update');
-	// 		$("#classEditForm")[0].reset();
-	// 		$("#editClassModal").modal('hide');
-	// 		}
-	// 	});
-	// });
+	 $("#classEditForm").submit(function(e) {
+	 e.preventDefault();
+	 const fd = new FormData(this);
+	 $("#btnupdate").text('Updating...');
+	 	$.ajax({
+	 		url: '{{ route('updateclass') }}',
+	 		method: 'post',
+	 		data: fd,
+	 		cache: false,
+	 		contentType: false,
+	 		processData: false,
+	 		dataType: 'json',
+	 	success: function(response) {
+	 		if (response.status == 200) {
+                 toastr.success('Update Successfully');
+	 			fetchAllNews();
+	 		}
+	 		$("#btnupdate").text('Update');
+	 		$("#classEditForm")[0].reset();
+	 		$("#editClassModal").modal('hide');
+	 		}
+	 	});
+	 });
 
 
 });

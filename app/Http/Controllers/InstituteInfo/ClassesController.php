@@ -37,7 +37,9 @@ class ClassesController extends Controller
               <tr>
                 <th>ID</th>
                 <th>Class</th>
+                <th>Class Image</th>
                 <th>Teacher Info</th>
+                <th>Teacher Photo</th>
                 <th>Student AgeLimit</th>
                 <th>Class Time</th>
                 <th>Capacity</th>
@@ -46,10 +48,19 @@ class ClassesController extends Controller
             </thead>
             <tbody>';
             foreach ($classes as $bm) {
+                // Generate the image URL
+                $defaultImage = asset('storage/images/1706522691.jpg');
+                $classimage = asset('storage/images/classRoom/'.$bm->photo);
+                $teacherimage = asset('storage/images/teacher/'.$bm->image);
+                $classimageSrc =  $bm->photo ? $classimage : $defaultImage;
+                $teacherimageSrc =  $bm->image ? $teacherimage : $defaultImage;
+
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
                 <td>'. $bm->class_name.'</td>
+                <td><img src='.$classimageSrc.' width="50" class="img-thumbnail"></td>
                 <td>'.$bm->class_teacher_name.'<br/>'.$bm->position.'</td>
+                <td><img src='.$teacherimageSrc.' width="50" class="img-thumbnail"></td>
                 <td>'.$bm->student_age.' Years'.'</td>
                 <td>'.$bm->class_time.'</td>
                 <td>'.$bm->capacity.' kids'.'</td>

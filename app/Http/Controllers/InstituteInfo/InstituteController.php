@@ -39,7 +39,7 @@ class InstituteController extends Controller
             <tbody>';
             foreach ($instituteInfo as $i_info) {
                 // Generate the image URL
-                $defaultImage = asset('storage/images/1694713766.jpg');
+                $defaultImage = asset('storage/images/1706522691.jpg');
                 $imageUrl = asset('storage/images/'.$i_info->logo);
                 $imageSrc =  $i_info->logo ? $imageUrl : $defaultImage;
 

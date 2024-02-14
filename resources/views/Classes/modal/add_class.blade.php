@@ -11,6 +11,25 @@
                     <div class="row">
 
                         <div class="col-md-6 mt-2 p-2">
+
+                            <div class="form-group">
+                                <label>Class Name</label>
+                                <input type="text" class="form-control" name="class_name" placeholder="Enter Class Name">
+                              </div>
+
+
+                            <div class="form-group">
+                                <label>Position</label>
+                                <input type="text" class="form-control" name="position" placeholder="Enter Position">
+                              </div>
+
+                              <div class="form-group">
+                                <label>Student Age</label>
+                                <input type="text" class="form-control" name="student_age" placeholder="Enter Student Age">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 mt-2 p-2">
                             <div class="form-group">
                               <label>Class Teacher Name</label>
                               <input type="text" class="form-control" required name="class_teacher_name" placeholder="Class Teacher Name">
@@ -24,23 +43,6 @@
                             <div class="form-group">
                                 <label>Capacity</label>
                                 <input type="text" class="form-control" name="capacity" placeholder="Enter Capacity">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mt-2 p-2">
-                            <div class="form-group">
-                                <label>Position</label>
-                                <input type="text" class="form-control" name="position" placeholder="Enter Position">
-                              </div>
-
-                            <div class="form-group">
-                                <label>Class Name</label>
-                                <input type="text" class="form-control" name="class_name" placeholder="Enter Class Name">
-                              </div>
-
-                              <div class="form-group">
-                                <label>Student Age</label>
-                                <input type="text" class="form-control" name="student_age" placeholder="Enter Student Age">
                             </div>
                         </div>
 
