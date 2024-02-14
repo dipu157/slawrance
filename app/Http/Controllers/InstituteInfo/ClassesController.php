@@ -50,8 +50,8 @@ class ClassesController extends Controller
             foreach ($classes as $bm) {
                 // Generate the image URL
                 $defaultImage = asset('storage/images/1706522691.jpg');
-                $classimage = asset('storage/images/classRoom/'.$bm->photo);
-                $teacherimage = asset('storage/images/teacher/'.$bm->image);
+                $classimage = asset('storage/images/classRoom/'.$bm->image);
+                $teacherimage = asset('storage/images/teacher/'.$bm->photo);
                 $classimageSrc =  $bm->photo ? $classimage : $defaultImage;
                 $teacherimageSrc =  $bm->image ? $teacherimage : $defaultImage;
 
@@ -81,11 +81,11 @@ class ClassesController extends Controller
     public function create(Request $request)
     {
 
-        $file = $request->file('image');
+        $file = $request->file('photo');
         $filename = time().'.'.$file->getClientOriginalExtension();
         $file->storeAs('public/images/teacher', $filename);
 
-        $file2 = $request->file('photo');
+        $file2 = $request->file('image');
         $filename2 = time().'.'.$file2->getClientOriginalExtension();
         $file2->storeAs('public/images/classRoom', $filename2);
 
@@ -118,29 +118,41 @@ class ClassesController extends Controller
   // handle update an class ajax request
   public function update(Request $request) {
 
-      $teacherImg = '';
-      $classPhoto = '';
+      $teacherPhoto = '';
       $clas = Classes::find($request->id);
 
-      if ($request->hasFile('image')) {
-          $file = $request->file('image');
-          $teacherImg = time() . '.' . $file->getClientOriginalExtension();
-          $file->storeAs('public/images/teacher/', $teacherImg);
-          if ($clas->image) {
-              Storage::delete('public/images/teacher/'.$clas->image);
+      if ($request->hasFile('photo')) {
+          $file = $request->file('photo');
+          $teacherPhoto = time() . '.' . $file->getClientOriginalExtension();
+          $file->storeAs('public/images/teacher/', $teacherPhoto);
+          if ($clas->photo) {
+              Storage::delete('public/images/teacher/'.$clas->photo);
           }
       } else {
-          $teacherImg = $request->image;
+          $teacherPhoto = $request->photo;
       }
+
+      $classImg = '';
+      if ($request->hasFile('image')) {
+        $file = $request->file('image');
+        $classImg = time() . '.' . $file->getClientOriginalExtension();
+        $file->storeAs('public/images/classRoom/', $classImg);
+        if ($clas->image) {
+            Storage::delete('public/images/classRoom/'.$clas->image);
+        }
+    } else {
+        $classImg = $request->image;
+    }
 
       $insData = [
         'class_teacher_name' => $request->class_teacher_name,
         'position' => $request->position,
         'class_name' => $request->class_name,
-        'image' => $teacherImg,
+        'photo' => $teacherPhoto,
         'student_age' => $request->student_age,
         'class_time' => $request->class_time,
         'capacity' => $request->capacity,
+        'image' => $classImg,
         'user_id' => $this->user_id,
       ];
 
