@@ -1,4 +1,3 @@
-<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 <div class="modal fade" id="editClassModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -12,8 +11,8 @@
                     <div class="row">
 
                         <input type="text" name="id" id="cls_id">
-                        <input type="text" name="photo" id="cls_photo">
-                        <input type="text" name="image" id="teacher_photo">
+                        <input type="text" name="image" id="cls_photo">
+                        <input type="text" name="photo" id="teacher_photo">
 
                         <div class="col-md-6 mt-2 p-2">
 

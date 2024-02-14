@@ -118,37 +118,45 @@ class ClassesController extends Controller
   // handle update an class ajax request
   public function update(Request $request) {
 
-      $fileName = '';
-      $ins = Classes::find($request->id);
+      $teacherImg = '';
+      $classPhoto = '';
+      $clas = Classes::find($request->id);
 
-      if ($request->hasFile('logo')) {
-          $file = $request->file('logo');
-          $fileName = time() . '.' . $file->getClientOriginalExtension();
-          $file->storeAs('public/images', $fileName);
-          if ($ins->logo) {
-              Storage::delete('public/images/'.$ins->logo);
+      if ($request->hasFile('image')) {
+          $file = $request->file('image');
+          $teacherImg = time() . '.' . $file->getClientOriginalExtension();
+          $file->storeAs('public/images/teacher/', $teacherImg);
+          if ($clas->image) {
+              Storage::delete('public/images/teacher/'.$clas->image);
           }
       } else {
-          $fileName = $request->ins_photo;
+          $teacherImg = $request->image;
       }
 
       $insData = [
         'class_teacher_name' => $request->class_teacher_name,
         'position' => $request->position,
-        'photo' => $fileName,
         'class_name' => $request->class_name,
-        'image' => $filename2,
+        'image' => $teacherImg,
         'student_age' => $request->student_age,
         'class_time' => $request->class_time,
         'capacity' => $request->capacity,
         'user_id' => $this->user_id,
       ];
 
-      $ins->update($insData);
+      $clas->update($insData);
       return response()->json([
           'status' => 200,
       ]);
   }
+
+  public function delete(Request $request) {
+    $id = $request->id;
+    $member = Classes::find($id);
+    if (Storage::delete('public/images/teacher/' . $member->photo) && Storage::delete('public/images/classRoom/' . $member->image)) {
+        Classes::destroy($id);
+    }
+}
 
 
 }

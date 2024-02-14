@@ -140,10 +140,10 @@ $(document).ready(function() {
 		 	$("#class_teacher_name").val(res.class_teacher_name);
 		 	$("#class_time").val(res.class_time);
 		 	$("#capacity").val(res.capacity);
-		 	$("#cls_photo").val(res.photo);
-		 	$("#teacher_photo").val(res.image);
-            $("#teacher_img").html(`<img src="storage/images/teacher/${res.image}" width="100" class="img-fluid img-thumbnail">`);
-            $("#class_img").html(`<img src="storage/images/classRoom/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
+		 	$("#cls_photo").val(res.image);
+		 	$("#teacher_photo").val(res.photo);
+            $("#teacher_img").html(`<img src="storage/images/teacher/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
+            $("#class_img").html(`<img src="storage/images/classRoom/${res.image}" width="100" class="img-fluid img-thumbnail">`);
 		 }
 		 });
 		 });
@@ -164,7 +164,7 @@ $(document).ready(function() {
 	 	success: function(response) {
 	 		if (response.status == 200) {
                  toastr.success('Update Successfully');
-	 			fetchAllNews();
+	 			fetchAllClass();
 	 		}
 	 		$("#btnupdate").text('Update');
 	 		$("#classEditForm")[0].reset();
