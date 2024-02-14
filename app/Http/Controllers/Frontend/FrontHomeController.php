@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Common\Messages;
 use App\Models\Common\Slider;
+use App\Models\InstituteInfo\Classes;
 use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\Teachers;
 use App\Models\Menu\Menu;
@@ -24,13 +25,13 @@ class FrontHomeController extends Controller
         $submenu = Sub_Menu::query()->where('status', 1)->get();
         $notice = Notice::query()->where('status', 1)->take(10)->get();
         $sliders = Slider::query()->where('status', 1)->take(3)->get();
-        $teachers = Teachers::query()->where('status',1)->take(4)->get();
-        $inotice = ImportantNotice::query()->where('status',1)->first();
+        //$teachers = Teachers::query()->where('status',1)->take(4)->get();
+        $classes = Classes::query()->where('status',1)->get();
         $message = Messages::query()->where('status',1)->take(2)->get();
-        $events = Event::query()->where('status',1)->take(4)->get();
+        //$events = Event::query()->where('status',1)->take(4)->get();
 
         //dd($message);
 
-        return view('Frontend.landpage', compact('institute','message','menus','events','inotice','sliders','submenu','notice','teachers'));
+        return view('Frontend.landpage', compact('institute','message','menus','classes','sliders','submenu','notice'));
     }
 }

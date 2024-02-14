@@ -10,9 +10,9 @@
                     @csrf
                     <div class="row">
 
-                        <input type="text" name="id" id="cls_id">
-                        <input type="text" name="image" id="cls_photo">
-                        <input type="text" name="photo" id="teacher_photo">
+                        <input type="hidden" name="id" id="cls_id">
+                        <input type="hidden" name="image" id="cls_photo">
+                        <input type="hidden" name="photo" id="teacher_photo">
 
                         <div class="col-md-6 mt-2 p-2">
 
