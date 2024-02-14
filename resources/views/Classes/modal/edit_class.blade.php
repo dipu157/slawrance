@@ -58,7 +58,7 @@
                                   <input type="file" class="form-control" id="photo" name="photo" onchange="loadFile(event)">
                                 </div>
                               </div>
-                              <div class="col-md-2 mt-2">
+                              <div class="col-md-2 mt-2" id="teacher_img">
                                 <span id="photospan">
                                   <img id="output" height="120px" width="100px" />
                                 </span>
@@ -71,10 +71,10 @@
                               <div class="col-md-10">
                                 <div class="form-group">
                                   <label>Class Image</label>
-                                  <input type="file" class="form-control" id="image" name="image" onchange="loadImage(event)">
+                                  <input type="file" class="form-control" id="image" name="image" onchange="loadImage(event2)">
                                 </div>
                               </div>
-                              <div class="col-md-2 mt-2">
+                              <div class="col-md-2 mt-2" id="class_img">
                                 <span id="imagespan">
                                   <img id="output2" height="120px" width="100px" />
                                 </span>
@@ -102,5 +102,14 @@
         output.src = reader.result;
         };
         reader.readAsDataURL(event.target.files[0]);
+    };
+
+    var loadImage = function(event2) {
+        var reader2 = new FileReader();
+        reader2.onload = function(){
+        var output2 = document.getElementById('output2');
+        output2.src = reader2.result;
+        };
+        reader2.readAsDataURL(event2.target.files[0]);
     };
 </script>

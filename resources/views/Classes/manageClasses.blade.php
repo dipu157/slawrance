@@ -142,6 +142,8 @@ $(document).ready(function() {
 		 	$("#capacity").val(res.capacity);
 		 	$("#cls_photo").val(res.photo);
 		 	$("#teacher_photo").val(res.image);
+            $("#teacher_img").html(`<img src="storage/images/teacher/${res.image}" width="100" class="img-fluid img-thumbnail">`);
+            $("#class_img").html(`<img src="storage/images/classRoom/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
 		 }
 		 });
 		 });

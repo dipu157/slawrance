@@ -17,10 +17,9 @@
                                 <input type="text" class="form-control" name="class_name" placeholder="Enter Class Name">
                               </div>
 
-
-                            <div class="form-group">
-                                <label>Position</label>
-                                <input type="text" class="form-control" name="position" placeholder="Enter Position">
+                              <div class="form-group">
+                                  <label>Class Time</label>
+                                  <input type="text" class="form-control" name="class_time" placeholder="Enter Class Time">
                               </div>
 
                               <div class="form-group">
@@ -36,9 +35,9 @@
                             </div>
 
                             <div class="form-group">
-                                <label>Class Time</label>
-                                <input type="text" class="form-control" name="class_time" placeholder="Enter Class Time">
-                            </div>
+                                <label>Position</label>
+                                <input type="text" class="form-control" name="position" placeholder="Enter Position">
+                              </div>
 
                             <div class="form-group">
                                 <label>Capacity</label>
@@ -100,11 +99,11 @@
     };
 
     var loadImage = function(event) {
-        var reader = new FileReader();
-        reader.onload = function(){
+        var reader2 = new FileReader();
+        reader2.onload = function(){
         var output2 = document.getElementById('output2');
-        output2.src = reader.result;
+        output2.src = reader2.result;
         };
-        reader.readAsDataURL(event.target.files[0]);
+        reader2.readAsDataURL(event.target.files[0]);
     };
 </script>

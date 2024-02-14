@@ -81,12 +81,13 @@ class ClassesController extends Controller
     public function create(Request $request)
     {
 
-        $file = $request->file('photo');
+        $file = $request->file('image');
         $filename = time().'.'.$file->getClientOriginalExtension();
         $file->storeAs('public/images/teacher', $filename);
 
-        $filename2 = time().'.'.$file->getClientOriginalExtension();
-        $file->storeAs('public/images/classRoom', $filename2);
+        $file2 = $request->file('photo');
+        $filename2 = time().'.'.$file2->getClientOriginalExtension();
+        $file2->storeAs('public/images/classRoom', $filename2);
 
         $bData = [
             'class_teacher_name' => $request->class_teacher_name,
