@@ -16,7 +16,7 @@
                         <div class="col-md-6 mt-2">
                             <div class="form-group">
                               <label>Full Name</label>
-                              <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Enter Full Name">
+                              <input type="text" class="form-control" id="name" name="name" placeholder="Enter Full Name">
                             </div>
 
                             <div class="form-group">

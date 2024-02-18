@@ -52,7 +52,7 @@ $(document).ready(function() {
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');
         $.ajax({
-            url: '{{ route('save') }}',
+            url: '{{ route('saveBmember') }}',
             method: 'post',
             data: fd,
             cache: false,
@@ -96,7 +96,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 		}).then((result) => {
 		if (result.isConfirmed) {
 		$.ajax({
-			url: '{{ route('delete') }}',
+			url: '{{ route('deleteBmember') }}',
 			method: 'delete',
 			data: {
 			id: id,
@@ -122,7 +122,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 		let id = $(this).attr('id');
         console.log(id + "Clicked");
 		$.ajax({
-		url: '{{ route('edit') }}',
+		url: '{{ route('editBmember') }}',
 		method: 'get',
 		data: {
 		id: id,
@@ -132,7 +132,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 			console.log(res);
 
             $("#bmem_id").val(res.id);
-			$("#full_name").val(res.full_name);
+			$("#name").val(res.name);
 			$("#position").val(res.position);
 			$("#mobile").val(res.mobile);
 			$('#gender option[value="'+res.gender+'"]').prop('selected', true);
@@ -148,7 +148,7 @@ $(document).on('click', '.deleteIcon', function(e) {
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');
 		$.ajax({
-			url: '{{ route('update') }}',
+			url: '{{ route('updateBmember') }}',
 			method: 'post',
 			data: fd,
 			cache: false,

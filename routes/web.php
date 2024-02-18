@@ -85,10 +85,10 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     //  Members Manage Route
     Route::get('/boardMemberIndex',[BoardMemberController::class, 'index'])->name('boardMembers');
     Route::get('/boardMemberdata', [BoardMemberController::class, 'getAllMemebers'])->name('boardMemberdata');
-    Route::post('/saveBMember', [BoardMemberController::class, 'create'])->name('save');
-    Route::get('/editMember', [BoardMemberController::class, 'edit'])->name('edit');
-    Route::post('/memberUpdate', [BoardMemberController::class, 'update'])->name('update');
-    Route::delete('/deleteMember', [BoardMemberController::class, 'delete'])->name('delete');
+    Route::post('/saveBMember', [BoardMemberController::class, 'create'])->name('saveBmember');
+    Route::get('/editMember', [BoardMemberController::class, 'edit'])->name('editBmember');
+    Route::post('/memberUpdate', [BoardMemberController::class, 'update'])->name('updateBmember');
+    Route::delete('/deleteMember', [BoardMemberController::class, 'delete'])->name('deleteBmember');
 
     // Teacher Manage Route
     Route::get('/teacherIndex',[TeacherController::class, 'index'])->name('teacherIndex');
@@ -168,7 +168,7 @@ Route::group(['namespace' => 'Notice', 'middleware' => ['auth']], function () {
     // Route::post('/updatenews', [NewsController::class, 'update'])->name('updatenews');
     // Route::delete('/deletenews', [NewsController::class, 'delete'])->name('deletenews');
 
-    
+
 
     //  events Manage Route
     Route::get('/eventsIndex',[EventsController::class, 'index'])->name('manageEvents');

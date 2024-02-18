@@ -52,7 +52,7 @@ class BoardMemberController extends Controller
                 $output .= '<tr>
                 <td>'.$bm->id.'</td>
                 <td><img src='.$imageSrc.' width="50" class="img-thumbnail"></td>
-                <td>'. $bm->full_name.'</td>
+                <td>'. $bm->name.'</td>
                 <td>'.$bm->position.'</td>
                 <td>'.$bm->mobile.'</td>
                 <td>
@@ -77,7 +77,7 @@ class BoardMemberController extends Controller
         $file->storeAs('public/images/BMember', $filename);
 
         $bData = [
-            'full_name' => $request->full_name,
+            'name' => $request->name,
             'position' => $request->position,
             'mobile' => $request->mobile,
             'gender' => $request->gender,
@@ -116,7 +116,7 @@ class BoardMemberController extends Controller
         }
 
         $bData = [
-            'full_name' => $request->full_name,
+            'name' => $request->name,
             'position' => $request->position,
             'mobile' => $request->mobile,
             'gender' => $request->gender,
