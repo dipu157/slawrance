@@ -67,7 +67,7 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
 
 });
 
-Route::group(['namespace' => 'Message', 'middleware' => ['auth']], function () {
+Route::group(['namespace' => 'Testimonial', 'middleware' => ['auth']], function () {
 
     //  Institute Manage Route
     Route::get('/messageIndex',[MessageController::class, 'index'])->name('messageIndex');

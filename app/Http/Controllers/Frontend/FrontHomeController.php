@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Common\Messages;
 use App\Models\Common\Slider;
+use App\Models\Common\Testimonial;
 use App\Models\InstituteInfo\Classes;
 use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\BoardMember;
-use App\Models\Member\Teachers;
 use App\Models\Menu\Menu;
 use App\Models\Menu\Sub_Menu;
-use App\Models\Notice\Event;
-use App\Models\Notice\ImportantNotice;
-use App\Models\Notice\News;
 use App\Models\Notice\Notice;
 use Illuminate\Http\Request;
 
@@ -28,11 +24,10 @@ class FrontHomeController extends Controller
         $sliders = Slider::query()->where('status', 1)->take(3)->get();
         $bmembers = BoardMember::query()->where('status',1)->take(3)->get();
         $classes = Classes::query()->where('status',1)->get();
-        $message = Messages::query()->where('status',1)->take(2)->get();
-        //$events = Event::query()->where('status',1)->take(4)->get();
+        $testimonial = Testimonial::query()->where('status',1)->take(2)->get();
 
         //dd($message);
 
-        return view('Frontend.landpage', compact('institute','message','menus','classes','sliders','submenu','bmembers'));
+        return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers'));
     }
 }

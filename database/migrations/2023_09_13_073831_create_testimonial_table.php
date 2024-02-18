@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('testimonial', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',50);
-            $table->string('image',150)->nullable();
-            $table->date('event_date')->default(Carbon\Carbon::now()->format('Y-m-d'));
-            $table->string('details',600)->nullable();
+            $table->string('name',50);
+            $table->string('photo',150)->nullable();
+            $table->string('position',50)->nullable();
+            $table->string('message',1000)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('messages');
     }
 };

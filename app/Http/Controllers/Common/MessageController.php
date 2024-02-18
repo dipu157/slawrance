@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Common;
 
 use App\Http\Controllers\Controller;
-use App\Models\Common\Messages;
+use App\Models\Common\Testimonial;
 use App\Models\Notice\ImportantNotice;
 use App\Models\Notice\Notice;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ class MessageController extends Controller
 
     public function getAllMessage()
     {
-        $message = Messages::query()->where('status',1)->get();
+        $message = Testimonial::query()->where('status',1)->get();
         $output = '';
         if($message->count() > 0){
             $output .= '<table id="messageTable" class="table table-striped table-bordered" style="width:100%">
@@ -87,14 +87,14 @@ class MessageController extends Controller
 
         //dd($bData);
 
-        Messages::create($bData);
+        Testimonial::create($bData);
         return response()->json(['status' => 200]);
     }
 
     public function edit(Request $request){
 
         $id = $request->id;
-        $ins = Messages::find($id);
+        $ins = Testimonial::find($id);
         return response()->json($ins);
     }
 
@@ -102,7 +102,7 @@ class MessageController extends Controller
     public function update(Request $request) {
 
         $fileName = '';
-        $member = Messages::find($request->id);
+        $member = Testimonial::find($request->id);
 
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
@@ -131,9 +131,9 @@ class MessageController extends Controller
 
     public function delete(Request $request) {
         $id = $request->id;
-        $member = Messages::find($id);
+        $member = Testimonial::find($id);
         if (Storage::delete('public/message/' . $member->photo)) {
-            Messages::destroy($id);
+            Testimonial::destroy($id);
         }
 
     }
