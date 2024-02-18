@@ -39,8 +39,6 @@ class BoardMemberController extends Controller
                 <th>Full Name</th>
                 <th>Position</th>
                 <th>Mobile</th>
-                <th>DOB</th>
-                <th>Blood Group</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -57,8 +55,6 @@ class BoardMemberController extends Controller
                 <td>'. $bm->full_name.'</td>
                 <td>'.$bm->position.'</td>
                 <td>'.$bm->mobile.'</td>
-                <td>'.$bm->dob.'</td>
-                <td>'.$bm->blood_group.'</td>
                 <td>
                   <a class="btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editMemberModal" id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
 
@@ -82,13 +78,9 @@ class BoardMemberController extends Controller
 
         $bData = [
             'full_name' => $request->full_name,
-            'email' => $request->email,
             'position' => $request->position,
             'mobile' => $request->mobile,
-            'dob' => $request->dob,
-            'blood_group' => $request->blood_group,
             'gender' => $request->gender,
-            'national_id' => $request->national_id,
             'photo' => $filename,
             'user_id' => $this->user_id,
         ];
@@ -125,13 +117,9 @@ class BoardMemberController extends Controller
 
         $bData = [
             'full_name' => $request->full_name,
-            'email' => $request->email,
             'position' => $request->position,
             'mobile' => $request->mobile,
-            'dob' => $request->dob,
-            'blood_group' => $request->blood_group,
             'gender' => $request->gender,
-            'national_id' => $request->national_id,
             'photo' => $fileName,
             'user_id' => $this->user_id,
         ];

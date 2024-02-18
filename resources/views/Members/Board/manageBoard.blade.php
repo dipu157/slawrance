@@ -133,13 +133,9 @@ $(document).on('click', '.deleteIcon', function(e) {
 
             $("#bmem_id").val(res.id);
 			$("#full_name").val(res.full_name);
-			$("#email").val(res.email);
 			$("#position").val(res.position);
 			$("#mobile").val(res.mobile);
-			$("#dob").val(res.dob);
-			$('#blood_group option[value="'+res.blood_group+'"]').prop('selected', true);
 			$('#gender option[value="'+res.gender+'"]').prop('selected', true);
-			$("#national_id").val(res.national_id);
 			$("#logo_img").html(`<img src="storage/images/BMember/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
 			$("#bmem_photo").val(res.photo);
 		}

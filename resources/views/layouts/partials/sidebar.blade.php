@@ -56,8 +56,8 @@
                 <div class="menu-title">Testimonial</div>
             </a>
             <ul>
-                {{-- <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
-                <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li> --}}
+                <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
+                {{-- <li> <a href="{{ route('teacherIndex') }}"><i class="bx bx-right-arrow-alt"></i>Teacher</a></li> --}}
                 <li> <a href="{{ route('messageIndex') }}"><i class="bx bx-right-arrow-alt"></i>Testimonial</a></li>
             </ul>
         </li>
@@ -94,7 +94,7 @@
             </a>
             <ul>
                 <li> <a href="{{route('manageNotice')}}"><i class="bx bx-right-arrow-alt"></i>Manage Notice</a></li>
-                
+
                 {{-- <li> <a href="{{route('manageEvents')}}"><i class="bx bx-right-arrow-alt"></i>Manage Events</a></li>
                 <li> <a href="{{route('manageInotice')}}"><i class="bx bx-right-arrow-alt"></i>Important Notice</a></li> --}}
             </ul>

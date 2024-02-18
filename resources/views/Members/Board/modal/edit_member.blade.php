@@ -23,38 +23,9 @@
                                 <label>Position</label>
                                 <input type="text" class="form-control" id="position" name="position" placeholder="Enter position">
                               </div>
-
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Mobile</label>
-                                <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Mobile No.">
-                            </div>
                         </div>
 
                          <div class="col-md-6 mt-2">
-                            <div class="form-group">
-                                <label>DOB</label>
-                                <input type="date" name="dob" id="dob" class="form-control" />
-                            </div>
-
-                              <div class="form-group">
-                                <label>Blood Group</label>
-                                <select class="form-control select2" id="blood_group" name="blood_group" style="width: 100%;">
-                                  <option selected="selected" disabled="">Select Blood Group</option>
-                                  <option value="a+">A+</option>
-                                  <option value="a-">A-</option>
-                                  <option value="b+">B+</option>
-                                  <option value="b-">B-</option>
-                                  <option value="ab+">AB+</option>
-                                  <option value="ab-">AB-</option>
-                                  <option value="o+">O+</option>
-                                  <option value="o-">O-</option>
-                                </select>
-                              </div>
 
                               <div class="form-group">
                                 <label>Gender</label>
@@ -65,10 +36,10 @@
                                 </select>
                               </div>
 
-                            <div class="form-group">
-                                <label>National ID</label>
-                                <input type="text" class="form-control" id="national_id" name="national_id" placeholder="Enter National ID">
-                            </div>
+                              <div class="form-group">
+                                  <label>Mobile</label>
+                                  <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Mobile No.">
+                              </div>
 
                         </div>
 

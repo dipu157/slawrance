@@ -16,11 +16,8 @@ return new class extends Migration
             $table->string('name',150);
             $table->string('position',150);
             $table->string('photo',150)->nullable();
-            $table->string('email',190)->nullable();
             $table->string('mobile',150)->nullable();
-            $table->date('dob')->nullable();
             $table->char('gender',1)->comments('M=> Male, F=>Female');
-            $table->char('blood_group',30)->nullable();
             $table->boolean('status')->default(1);
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('RESTRICT');
