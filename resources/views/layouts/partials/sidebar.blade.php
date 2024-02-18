@@ -47,6 +47,7 @@
             <ul>
                 <li> <a href="{{ route('manageInstitute') }}"><i class="bx bx-right-arrow-alt"></i>Manage Institute</a></li>
                 <li> <a href="{{route('manageClasses')}}"><i class="bx bx-right-arrow-alt"></i>Manage Classes</a></li>
+                <li> <a href="{{route('manageFacility')}}"><i class="bx bx-right-arrow-alt"></i>Manage Facility</a></li>
             </ul>
         </li>
         <li>

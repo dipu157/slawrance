@@ -8,6 +8,7 @@ use App\Http\Controllers\Menu\MenuController;
 use App\Http\Controllers\Common\SliderController;
 use App\Http\Controllers\Menu\SubMenuController;
 use App\Http\Controllers\Frontend\FrontHomeController;
+use App\Http\Controllers\InstituteInfo\FacilityController;
 use App\Http\Controllers\InstituteInfo\InstituteController;
 use App\Http\Controllers\Members\BoardMemberController;
 use App\Http\Controllers\Members\TeacherController;
@@ -63,6 +64,15 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
     Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
     Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
     Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
+
+
+    // Facility Manage Route
+    Route::get('/facilityIndex',[FacilityController::class, 'index'])->name('manageFacility');
+    // Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
+    // Route::post('/saveclass', [ClassesController::class, 'create'])->name('saveclass');
+    // Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
+    // Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
+    // Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
 
 
 });
