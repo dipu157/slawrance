@@ -68,11 +68,11 @@ Route::group(['namespace' => 'Institute', 'middleware' => ['auth']], function ()
 
     // Facility Manage Route
     Route::get('/facilityIndex',[FacilityController::class, 'index'])->name('manageFacility');
-    // Route::get('/classData', [ClassesController::class, 'getAllClasses'])->name('classData');
-    // Route::post('/saveclass', [ClassesController::class, 'create'])->name('saveclass');
-    // Route::get('/editclass', [ClassesController::class, 'edit'])->name('editclass');
-    // Route::post('/updateclass', [ClassesController::class, 'update'])->name('updateclass');
-    // Route::delete('/deleteclass', [ClassesController::class, 'delete'])->name('deleteclass');
+    Route::get('/facilityData', [FacilityController::class, 'getAllFacility'])->name('facilityData');
+    Route::post('/savefacility', [FacilityController::class, 'create'])->name('savefacility');
+    Route::get('/editfacility', [FacilityController::class, 'edit'])->name('editfacility');
+    Route::post('/updatefacility', [FacilityController::class, 'update'])->name('updatefacility');
+    Route::delete('/deletefacility', [FacilityController::class, 'delete'])->name('deletefacility');
 
 
 });

@@ -38,21 +38,21 @@ $(document).ready(function() {
     // Get All Member function
     function fetchAllIFacility(){
     $.ajax({
-    url: '{{ route('inoticeData') }}',
+    url: '{{ route('facilityData') }}',
     method: 'get',
     success: function(res){
-        $("#show_inotices").html(res);
+        $("#show_facilities").html(res);
     }
     });
     }
 
-    // Add Memeber Code
-	$("#inoticeForm").submit(function(e){
+    // Add Facility Code
+	$("#facilityForm").submit(function(e){
         e.preventDefault();
         const fd = new FormData(this);
         $("#btnsave").text('Adding...');
         $.ajax({
-            url: '{{ route('saveInotice') }}',
+            url: '{{ route('savefacility') }}',
             method: 'post',
             data: fd,
             cache: false,
@@ -65,15 +65,15 @@ $(document).ready(function() {
                     fetchAllIFacility();
                 }
                 $("#btnsave").text('SAVE');
-                $("#inoticeForm")[0].reset();
-                $("#addINoticeModal").modal('hide');
+                $("#facilityForm")[0].reset();
+                $("#addFacilityModal").modal('hide');
             },
             error: function (request, status, error) {
                 toastr.error(request.responseText);
                 fetchAllIFacility();
                 $("#btnsave").text('SAVE');
-                $("#inoticeForm")[0].reset();
-                $("#addINoticeModal").modal('hide');
+                $("#facilityForm")[0].reset();
+                $("#addFacilityModal").modal('hide');
             }
 
         });
@@ -96,7 +96,7 @@ $(document).ready(function() {
 		}).then((result) => {
 		if (result.isConfirmed) {
 		$.ajax({
-			url: '{{ route('deleteInotice') }}',
+			url: '{{ route('deletefacility') }}',
 			method: 'delete',
 			data: {
 			id: id,
@@ -122,7 +122,7 @@ $(document).ready(function() {
 		let id = $(this).attr('id');
         console.log(id + "Clicked");
 		$.ajax({
-		url: '{{ route('editInotice') }}',
+		url: '{{ route('editfacility') }}',
 		method: 'get',
 		data: {
 		id: id,
@@ -131,7 +131,7 @@ $(document).ready(function() {
 		success: function(res){
 			console.log(res);
 
-            $("#bmem_id").val(res.id);
+            $("#fac_id").val(res.id);
 			$("#title").val(res.title);
 			$("#description").val(res.description);
 		}
@@ -139,12 +139,12 @@ $(document).ready(function() {
 		});
 
         // update employee ajax request
-	$("#inoticeEditForm").submit(function(e) {
+	$("#facilityEditForm").submit(function(e) {
 	e.preventDefault();
 	const fd = new FormData(this);
 	$("#btnupdate").text('Updating...');
 		$.ajax({
-			url: '{{ route('updateInotice') }}',
+			url: '{{ route('updatefacility') }}',
 			method: 'post',
 			data: fd,
 			cache: false,
@@ -157,8 +157,8 @@ $(document).ready(function() {
 				fetchAllIFacility();
 			}
 			$("#btnupdate").text('Update');
-			$("#inoticeEditForm")[0].reset();
-			$("#editINoticeModal").modal('hide');
+			$("#facilityEditForm")[0].reset();
+			$("#editFacilityModal").modal('hide');
 			}
 		});
 	});
