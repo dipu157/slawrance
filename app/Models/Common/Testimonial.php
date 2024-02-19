@@ -9,7 +9,7 @@ class Testimonial extends Model
 {
     use HasFactory;
 
-    protected $table= 'messages';
+    protected $table= 'testimonial';
 
     protected $guarded = ['id', 'created_at','updated_at'];
 

@@ -54,7 +54,7 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class='bx bx-user-circle'></i>
                 </div>
-                <div class="menu-title">Testimonial</div>
+                <div class="menu-title">Members</div>
             </a>
             <ul>
                 <li> <a href="{{ route('boardMembers') }}"><i class="bx bx-right-arrow-alt"></i>Board Members</a></li>
