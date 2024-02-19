@@ -1,4 +1,3 @@
-<script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 <div class="modal fade" id="addInstituteModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -45,7 +44,7 @@
                             <div class="form-group">
                                 <label>Logo</label>
                                 <input type="file" class="form-control" id="logo" name="logo" onchange="loadFile(event)">
-                              </div>
+                            </div>
                         </div>
 
                          <div class="col-md-6 mt-3">

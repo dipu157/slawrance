@@ -46,7 +46,7 @@ class FacilityController extends Controller
             foreach ($facility as $bm) {
                 // Generate the image URL
                 $defaultImage = asset('storage/images/1694713766.png');
-                $imageUrl = asset('storage/images/facility/'.$bm->icon);
+                $imageUrl = asset('storage/images/Facility/'.$bm->icon);
                 $imageSrc =  $bm->icon ? $imageUrl : $defaultImage;
 
                 $output .= '<tr>
@@ -71,9 +71,14 @@ class FacilityController extends Controller
 
     public function create(Request $request)
     {
+        $file = $request->file('icon');
+        $filename = time().'.'.$file->getClientOriginalExtension();
+        $file->storeAs('public/images/Facility', $filename);
+
         $bData = [
             'title' => $request->title,
             'description' => $request->description,
+            'icon' => $filename,
             'user_id' => $this->user_id,
         ];
 
@@ -92,11 +97,26 @@ class FacilityController extends Controller
 
     public function update(Request $request) {
 
+        $fileName = '';
         $member = Facilities::find($request->id);
+
+        if ($request->hasFile('icon')) {
+            $file = $request->file('icon');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/images/Facility', $fileName);
+            if ($member->icon) {
+                Storage::delete('public/images/Facility/' . $member->icon);
+            }
+        } else {
+            $fileName = $request->fac_icon;
+        }
+
+
 
         $bData = [
             'title' => $request->title,
             'description' => $request->description,
+            'icon' => $fileName,
             'user_id' => $this->user_id,
         ];
 

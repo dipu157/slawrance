@@ -79,4 +79,4 @@
         };
         reader.readAsDataURL(event.target.files[0]);
     };
-    </script>
+</script>

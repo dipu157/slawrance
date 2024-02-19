@@ -134,6 +134,8 @@ $(document).ready(function() {
             $("#fac_id").val(res.id);
 			$("#title").val(res.title);
 			$("#description").val(res.description);
+            $("#icon_img").html(`<img src="storage/images/Facility/${res.icon}" width="100" class="img-fluid img-thumbnail">`);
+			$("#fac_icon").val(res.icon);
 		}
 		});
 		});
