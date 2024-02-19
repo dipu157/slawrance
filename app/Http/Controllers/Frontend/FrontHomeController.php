@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Common\Slider;
 use App\Models\Common\Testimonial;
 use App\Models\InstituteInfo\Classes;
+use App\Models\InstituteInfo\Facilities;
 use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\BoardMember;
 use App\Models\Menu\Menu;
@@ -25,9 +26,23 @@ class FrontHomeController extends Controller
         $bmembers = BoardMember::query()->where('status',1)->take(3)->get();
         $classes = Classes::query()->where('status',1)->get();
         $testimonial = Testimonial::query()->where('status',1)->take(2)->get();
+        $databaseFacilities  = Facilities::query()->where('status',1)->take(4)->get();
+        // Define an array of colors
+        $colors = [
+            "bg-primary",
+            "bg-success",
+            "bg-warning",
+            "bg-success",
+            // Add more colors as needed
+        ];
+        // Combine data from the database with colors
+        $combinedFacilities = [];
+        foreach ($databaseFacilities  as $index => $databaseFacility) {
+            $combinedFacilities[] = array_merge($databaseFacility->toArray(), ["color" => $colors[$index]]);
+        }
 
-        //dd($message);
 
-        return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers'));
+
+        return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers','combinedFacilities'));
     }
 }

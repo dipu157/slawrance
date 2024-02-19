@@ -11,8 +11,8 @@
                     <div class="row">
                         <div class="col-md-12 mt-2 p-2">
 
-                            <input type="text" name="id" id="fac_id">
-                            <input type="text" name="fac_icon" id="fac_icon">
+                            <input type="hidden" name="id" id="fac_id">
+                            <input type="hidden" name="fac_icon" id="fac_icon">
 
                             <div class="form-group row required">
                                 <label for="title" class="col-sm-4 col-form-label text-md-right">Title</label>
@@ -50,7 +50,7 @@
                          </div>
 
                       </div>
-                    <input type="submit" class="btn btn-primary" id="btnsave" value="Save">
+                    <input type="submit" class="btn btn-primary" id="btnsave" value="Update">
                 </form>
             </div>
             <div class="modal-footer">
