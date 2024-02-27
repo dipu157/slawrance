@@ -138,6 +138,8 @@ Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {
     Route::post('/updatemenupage', [MenuPageController::class, 'update'])->name('updatemenupage');
     Route::delete('/deletemenupage', [MenuPageController::class, 'delete'])->name('deletemenupage');
 
+    Route::get('/menu/{id}', [MenuController::class, 'show'])->name('menu.show');
+
 });
 
 Route::group(['namespace' => 'Slider', 'middleware' => ['auth']], function () {

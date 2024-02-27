@@ -41,8 +41,11 @@ class FrontHomeController extends Controller
             $combinedFacilities[] = array_merge($databaseFacility->toArray(), ["color" => $colors[$index]]);
         }
 
-
-
         return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers','combinedFacilities'));
+    }
+
+    public function notice()
+    {
+
     }
 }
