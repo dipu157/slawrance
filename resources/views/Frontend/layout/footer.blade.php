@@ -16,11 +16,20 @@
                     </div>
                     <div class="col-lg-2 col-md-6">
                         <h3 class="text-white mb-4">Quick Links</h3>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        @foreach($menus as $menu)
+                        @if($menu->hasSubmenus())
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white-50" data-bs-toggle="dropdown">{{ $menu->name }}</a>
+                                <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0 text-white-50">
+                                    @foreach($submenu->where('menu_id', $menu->id) as $sub)
+                                        <a href="{{ $sub->url }}" class="dropdown-item">{{ $sub->name }}</a>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @else
+                            <a href="{{ $menu->url }}" class="nav-item nav-link active">{{ $menu->name }}</a>
+                        @endif
+                    @endforeach
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Photo Gallery</h3>

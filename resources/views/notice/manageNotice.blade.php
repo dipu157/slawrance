@@ -46,7 +46,7 @@ $(document).ready(function() {
     });
     }
 
-    // Add Memeber Code
+    // Add Notice Code
 	$("#noticeForm").submit(function(e){
         e.preventDefault();
         const fd = new FormData(this);
@@ -78,6 +78,12 @@ $(document).ready(function() {
 
         });
 	});
+
+    //View Icon Click for View PDF
+		$(document).on('click', '.viewIcon', function(e){
+            e.preventDefault();
+            window.location.href = $(this).data('remote');
+		});
 
     // delete employee ajax request
     $(document).on('click', '.deleteIcon', function(e) {
