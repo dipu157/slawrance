@@ -252,7 +252,7 @@
                     <div class="testimonial-item bg-light rounded p-5">
                         <p class="fs-5">{{ $testimonial->message }}</p>
                         <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('storage/testimonial/'.$testimonial->photo)}}" style="width: 90px; height: 90px;">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="{{asset('storage/message/'.$testimonial->photo)}}" style="width: 90px; height: 90px;">
                             <div class="ps-3">
                                 <h3 class="mb-1">{{ $testimonial->name }}</h3>
                                 <span>{{ $testimonial->position }}</span>
