@@ -34,7 +34,7 @@ class FrontHomeController extends Controller
             return 'Failed to create symbolic link.';
         }
     }
-    
+
     public function index()
     {
         $institute = InstituteInfo::query()->where('id', 1)->first();
@@ -52,6 +52,8 @@ class FrontHomeController extends Controller
             "bg-success",
             "bg-warning",
             "bg-success",
+            "bg-primary",
+            "bg-warning",
             // Add more colors as needed
         ];
         // Combine data from the database with colors

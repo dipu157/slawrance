@@ -41,7 +41,7 @@
                             $delay = 0.1 * $index;
                         @endphp
 
-                        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="{{ $delay }}s">
+                        <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="{{ $delay }}s">
                             <div class="facility-item">
                                 <div class="facility-icon {{ $facility["color"] }}">
                                     <span class="{{ $facility["color"] }}"></span>
@@ -55,6 +55,31 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+            </div>
+        </div>
+        <!-- Facilities End -->
+
+        <!-- Facilities Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Principal's Message</h1>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-8 wow fadeInUp bg-light p-5" data-wow-delay="0.1s">
+                    <p>At St. Lawrence School of Jewels , we prioritize student success and holistic development. With dedicated faculty,
+                        innovative programs, and a supportive community, we empower each student to thrive academically, socially, and emotionally.
+                        Let's work together to unlock the potential within every student and foster a culture of excellence and compassion.</p>
+                    </div>
+
+                    <div class="col-lg-4 wow fadeInUp bg-light" data-wow-delay="0.1s">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img class="img-fluid w-75 h-75 bg-light p-3" src="{{asset("/frontend/img/principle.jpg")}}" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,14 +109,6 @@
                                 • Karate Club <br/>
                                 • Art & Craft Club. </b>
                             </p>
-                        <div class="row g-4 align-items-center">
-                            <div class="col-sm-12">
-                                <h2>Principal's Message</h2>
-                                <p>At St. Lawrence School of Jewels , we prioritize student success and holistic development. With dedicated faculty, 
-                                innovative programs, and a supportive community, we empower each student to thrive academically, socially, and emotionally. 
-                                Let's work together to unlock the potential within every student and foster a culture of excellence and compassion.</p>
-                            </div>
-                        </div>
                     </div>
                     <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                         <div class="row">
@@ -130,7 +147,7 @@
                             </div>
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4">{{ $class->class_name }}</a>
-                                
+
                             </div>
                         </div>
                     </div>
