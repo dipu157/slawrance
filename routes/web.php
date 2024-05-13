@@ -112,6 +112,10 @@ Route::group(['namespace' => 'Members', 'middleware' => ['auth']], function () {
     Route::post('/updateTeacher', [TeacherController::class, 'update'])->name('updateTeacher');
     Route::delete('/deleteTeacher', [TeacherController::class, 'delete'])->name('deleteTeacher');
 
+    // Appointment Index
+    Route::get('/appointmentIndex',[FrontHomeController::class, 'appointmentIndex'])->name('appointmentIndex');
+    Route::get('/appointmentData', [FrontHomeController::class, 'getAllAppointment'])->name('appointmentData');
+
 });
 
 Route::group(['namespace' => 'Menu', 'middleware' => ['auth']], function () {

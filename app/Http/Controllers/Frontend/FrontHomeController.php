@@ -84,4 +84,44 @@ class FrontHomeController extends Controller
         Appointment::create($AppointData);
         return response()->json(['status' => 200]);
     }
+
+    public function appointmentIndex()
+    {
+        return view('Members.Appointment.manageappointment');
+    }
+
+    public function getAllAppointment()
+    {
+        $bMember = Appointment::query()->get();
+        $output = '';
+        if($bMember->count() > 0){
+            $output .= '<table id="memberTable" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Guardian Name</th>
+                <th>Mobile</th>
+                <th>Child Name</th>
+                <th>Admission Class</th>
+                <th>Message</th>
+              </tr>
+            </thead>
+            <tbody>';
+            foreach ($bMember as $bm) {
+
+                $output .= '<tr>
+                <td>'.$bm->id.'</td>
+                <td>'. $bm->gurdian_name.'</td>
+                <td>'.$bm->mobile.'</td>
+                <td>'.$bm->child_name.'</td>
+                <td>'.$bm->class.'</td>
+                <td>'.$bm->message.'</td>
+              </tr>';
+            }
+            $output .= '</tbody></table>';
+            echo $output;
+        }else{
+            echo '<h1 class="text-center text-secondary my-5">No Record Found in Database</h1>';
+        }
+    }
 }
