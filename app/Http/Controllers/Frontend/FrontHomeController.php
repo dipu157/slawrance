@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Common\Slider;
 use App\Models\Common\Testimonial;
 use App\Models\InstituteInfo\Classes;
+use App\Models\Appointment\Appointment;
 use App\Models\InstituteInfo\Facilities;
 use App\Models\InstituteInfo\InstituteInfo;
 use App\Models\Member\BoardMember;
@@ -65,5 +66,22 @@ class FrontHomeController extends Controller
 
 
         return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers','combinedFacilities'));
+    }
+
+    public function createAppointment(Request $request)
+    {
+
+        $AppointData = [
+            'gurdian_name' => $request->gurdian_name,
+            'mobile' => $request->mobile,
+            'child_name' => $request->child_name,
+            'class' => $request->class,
+            'message' => $request->message,
+        ];
+
+        //dd($AppointData);
+
+        Appointment::create($AppointData);
+        return response()->json(['status' => 200]);
     }
 }

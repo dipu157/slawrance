@@ -71,6 +71,7 @@
                     <p>At St. Lawrence School of Jewels , we prioritize student success and holistic development. With dedicated faculty,
                         innovative programs, and a supportive community, we empower each student to thrive academically, socially, and emotionally.
                         Let's work together to unlock the potential within every student and foster a culture of excellence and compassion.</p>
+                    <h5>Hasina Afroz khan <br>Principal </h5>
                     </div>
 
                     <div class="col-lg-4 wow fadeInUp bg-light" data-wow-delay="0.1s">
@@ -166,40 +167,41 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Make Appointment</h1>
-                                <form>
+                                <form method="post" id="appointmentForm">
+                                    @csrf
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
+                                                <input type="text" class="form-control border-0" name="gurdian_name" id="gname" placeholder="Gurdian Name">
                                                 <label for="gname">Guardian Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Guardian Mobile No.</label>
+                                                <input type="text" class="form-control border-0" name="mobile" id="mobile" placeholder="Gurdian Email">
+                                                <label for="mobile">Guardian Mobile No.</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
+                                                <input type="text" class="form-control border-0" name="child_name" id="cname" placeholder="Child Name">
                                                 <label for="cname">Child Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Interested Admission Class</label>
+                                                <input type="text" class="form-control border-0" id="class" name="class" placeholder="Child Age">
+                                                <label for="class">Interested Admission Class</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                                <textarea class="form-control border-0" placeholder="Leave a message here" name="mesage" id="message" style="height: 100px"></textarea>
                                                 <label for="message">Message</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" id="btnsave" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -269,3 +271,35 @@
 
 
 @include('Frontend.layout.footer')
+
+<script type="text/javascript">
+
+// Add Appointment Code
+$("#appointmentForm").submit(function(e){
+        e.preventDefault();
+        const fd = new FormData(this);
+        $("#btnsave").text('Submitting...');
+        $.ajax({
+            url: '{{ route('saveAppointment') }}',
+            method: 'post',
+            data: fd,
+            cache: false,
+            processData: false,
+            contentType: false,
+            success: function(res){
+                console.log(res);
+                if(res.status == 200){
+                    toastr.success('Submit Successfully');
+                }
+                $("#btnsave").text('Submit');
+                $("#appointmentForm")[0].reset();
+            },
+            error: function (request, status, error) {
+                toastr.error(request.responseText);
+                $("#btnsave").text('Submit');
+            }
+
+        });
+	});
+
+</script>

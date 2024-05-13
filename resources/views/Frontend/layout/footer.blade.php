@@ -80,6 +80,7 @@
     <script src="{{asset("/frontend/lib/easing/easing.min.js")}}"></script>
     <script src="{{asset("/frontend/lib/waypoints/waypoints.min.js")}}"></script>
     <script src="{{asset("/frontend/lib/owlcarousel/owl.carousel.min.js")}}"></script>
+    <script src="{{asset('/')}}plugins/toastr/toastr.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="{{asset("/frontend/js/main.js")}}"></script>

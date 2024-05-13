@@ -35,6 +35,7 @@ Route::get('/storagel', [FrontHomeController::class, 'createStorageLink']);
 #Route::get('/', function () { return view('Frontend.landpage'); });
 Route::get('/', [FrontHomeController::class, 'index'])->name('frontHomeIndex');
 Route::get('/admin/login', function () { return view('auth.login'); });
+Route::post('/saveAppointment', [FrontHomeController::class, 'createAppointment'])->name('saveAppointment');
 
 
 Route::get('/dashboard', function () { return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
