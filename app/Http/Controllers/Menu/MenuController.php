@@ -109,17 +109,11 @@ class MenuController extends Controller
     public function show($id){
 
         $institute = InstituteInfo::query()->where('id', 1)->first();
-        $menus = Menu::query()->where('status', 1)->with('submenus')->get();
+        $menus = Menu::query()->where('status', 1)->get();
         $submenu = Sub_Menu::query()->where('status', 1)->get();
         $menupage = MenuDetails::query()->where('menu_id', $id)->first();
-        $menu_name = Menu::where('id', $id)->first();
+        //dd($menupage);
 
-        if($menu_name->id == 1){
-            return redirect()->route('frontHomeIndex');
-        }else if($menu_name->id == 4){
-            return view('Frontend.menupage.noticepage', compact('institute','menus','submenu','menupage','menu_name'));
-        }else{
-            return view('Frontend.menupage.menupagelayout', compact('institute','menus','submenu','menupage','menu_name'));
-        }
+        return view('Frontend.menupage.menupagelayout', compact('institute','menus','submenu','menupage'));
     }
 }

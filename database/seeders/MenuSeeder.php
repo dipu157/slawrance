@@ -14,26 +14,33 @@ class MenuSeeder extends Seeder
      */
     public function run(): void
     {
+        // DB::table('menus')->insert([
+        //     'name' => 'About Us',
+        //     'slug' => 'about_us',
+        //     'created_at'=>'2023-01-27 11:31:21',
+        //     'updated_at'=>'2023-01-27 11:31:43'
+        // ]);
+
 
         DB::table('menus')->delete();
 
         $menus = [
             [
-                'name' => 'Home',
-                'position' => 1,
+                'name' => 'Home', 
+                'position' => 1, 
                 'user_id' => 1,
-                'created_at'=>'2023-01-27 11:31:21',
+                'created_at'=>'2023-01-27 11:31:21', 
                 'updated_at'=>'2023-01-27 11:31:43'
             ],
             [
-                'name' => 'Notice',
-                'position' => 3,
+                'name' => 'Academic', 
+                'position' => 2, 
                 'user_id' => 1,
-                'created_at'=>'2023-01-27 11:31:21',
+                'created_at'=>'2023-01-27 11:31:21', 
                 'updated_at'=>'2023-01-27 11:31:43'
             ],
         ];
-
+    
         Menu::insert($menus);
     }
 }

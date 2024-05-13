@@ -8,7 +8,6 @@ use App\Models\Notice\Notice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Response;
 
 class NoticeController extends Controller
 {
@@ -53,7 +52,7 @@ class NoticeController extends Controller
                 <td>
                   <a class="btn btn-sm btn-edit editIcon" data-bs-toggle="modal" data-bs-target="#editNoticeModal"
                   id="' . $bm->id . '"><i class="bx bxs-edit"></i></a>
-                  <a class="btn btn-sm ms-3 btn-success viewIcon" data-remote="view/' . $bm->id . '" data-rowid="'. $bm->id . '"  ><i class="bx bxs-envelope"></i></a>
+                  <a class="btn btn-sm ms-3 btn-success viewIcon" id="' . $bm->id . '"><i class="bx bxs-envelope"></i></a>
                   <a class="btn btn-sm ms-3 btn-danger deleteIcon" id="' . $bm->id . '"><i class="bx bxs-trash"></i></a>
                 </td>
               </tr>';
@@ -74,37 +73,17 @@ class NoticeController extends Controller
             'user_id' => $this->user_id,
         ];
 
-        $notice = Notice::create($bData);
-
         if ($request->hasFile('attachment')) {
             $file = $request->file('attachment');
-            $filename = $notice->id . '_' . time() . '.' . $file->getClientOriginalExtension();
+            $filename = time() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/notice', $filename);
-            $notice->update(['attachment' => $filename]);
+            $bData['attachment'] = $filename;
         }
 
+        Notice::create($bData);
         return response()->json(['status' => 200]);
     }
 
-
-    public function viewFile($id)
-    {
-        $filename = 'storage/notice/' . $id . '_*.pdf';
-        $path = public_path($filename);
-
-       // dd($path);
-
-        if (empty($path)) {
-            return response()->json(['error' => 'File not found'], 404);
-        }
-
-        //$filename = basename($path[0]);
-
-        return Response::make(file_get_contents($path), 200, [
-            'Content-Type' => 'application/pdf',
-            'Content-Disposition' => 'inline; filename="'.$filename.'"'
-        ]);
-    }
 
     public function edit(Request $request){
 

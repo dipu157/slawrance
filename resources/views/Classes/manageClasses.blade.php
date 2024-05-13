@@ -135,14 +135,7 @@ $(document).ready(function() {
 
             $("#cls_id").val(res.id);
 		 	$("#class_name").val(res.class_name);
-		 	$("#position").val(res.position);
-		 	$("#student_age").val(res.student_age);
-		 	$("#class_teacher_name").val(res.class_teacher_name);
-		 	$("#class_time").val(res.class_time);
-		 	$("#capacity").val(res.capacity);
 		 	$("#cls_photo").val(res.image);
-		 	$("#teacher_photo").val(res.photo);
-            $("#teacher_img").html(`<img src="storage/images/teacher/${res.photo}" width="100" class="img-fluid img-thumbnail">`);
             $("#class_img").html(`<img src="storage/images/classRoom/${res.image}" width="100" class="img-fluid img-thumbnail">`);
 		 }
 		 });

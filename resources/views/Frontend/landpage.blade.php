@@ -1,6 +1,5 @@
 @include('Frontend.layout.header')
 
-
         <!-- Carousel Start -->
         <div class="container-fluid p-0 mb-5">
             <div class="owl-carousel header-carousel position-relative">
@@ -33,7 +32,6 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">School Facilities</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
 
@@ -68,34 +66,43 @@
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInUp bg-light" data-wow-delay="0.1s">
-                        <h1 class="mb-4">Why St.Lawrence should be the first choice for your kids ?</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor eos, ipsum labore duo duo sit no sea diam. Et dolor et kasd ea. Eirmod diam at dolor est vero nonumy magna.</p>
+                        <h1 class="mb-4">Learn More About Our Schools Facility</h1>
+                        <p><b> 1.	EDEXCEL Accredited institution.<br/>
+                            2.	Our institution has well qualified, experienced, professional, young & energetic dedicated teaching staffs.<br/>
+                            3.	Independent Campus with modern facilities.<br/>
+                            4.	Individual attention is given towards each student.<br/>
+                            5.	It’s our pride that ethical values and multicultural environment keep our learners enriched.<br/>
+                            6.	Modern computer lab & library.<br/>
+                            7.	Transport facility.<br/>
+                            8.	Play zone, in-door and outdoor games facilities.<br/>
+                            9.	Participation in ECA in house and outdoor.<br/>
+                            10.	 Our Campus Activity Zone opens doors to SIX diverse. Each student must be included as a member of any one of the following clubs: <br/>
+                                • Language Club <br/>
+                                • Maths & Science Club <br/>
+                                • Music Club <br/>
+                                • Dance Club <br/>
+                                • Karate Club <br/>
+                                • Art & Craft Club. </b>
+                            </p>
                         <div class="row g-4 align-items-center">
-                            <div class="col-sm-6">
-                                <a class="btn btn-primary rounded-pill py-3 px-5" href="">Read More</a>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle flex-shrink-0" src="{{asset("/frontend/img/user.jpg")}}" alt="" style="width: 45px; height: 45px;">
-                                    <div class="ms-3">
-                                        <h6 class="text-primary mb-1">Jhon Doe</h6>
-                                        <small>CEO & Founder</small>
-                                    </div>
-                                </div>
+                            <div class="col-sm-12">
+                                <h2>Principal's Message</h2>
+                                <p>At St. Lawrence School of Jewels , we prioritize student success and holistic development. With dedicated faculty, 
+                                innovative programs, and a supportive community, we empower each student to thrive academically, socially, and emotionally. 
+                                Let's work together to unlock the potential within every student and foster a culture of excellence and compassion.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                         <div class="row">
                             <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="{{asset("/frontend/img/about-1.jpg")}}" alt="">
+                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="{{asset("/frontend/img/learn_more1.jpg")}}" alt="">
                             </div>
                             <div class="col-6 text-start" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="{{asset("/frontend/img/about-2.jpg")}}" alt="">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="{{asset("/frontend/img/learn_more2.jpg")}}" alt="">
                             </div>
                             <div class="col-6 text-end" style="margin-top: -150px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="{{asset("/frontend/img/about-3.jpg")}}" alt="">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="{{asset("/frontend/img/learn_more3.jpg")}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -108,9 +115,9 @@
         <!-- Classes Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
                     <h1 class="mb-3">School Classes</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <p>Our school classes are organizing with 15 grades,which are from Play Group to A-Level.</p>
                 </div>
 
 
@@ -123,35 +130,7 @@
                             </div>
                             <div class="bg-light rounded p-4 pt-5 mt-n5">
                                 <a class="d-block text-center h3 mt-3 mb-4">{{ $class->class_name }}</a>
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <div class="d-flex align-items-center">
-                                        <img class="rounded-circle flex-shrink-0" src="{{asset('storage/images/teacher/'.$class->photo)}}" alt="" style="width: 45px; height: 45px;">
-                                        <div class="ms-3">
-                                            <h6 class="text-primary mb-1">{{ $class->class_teacher_name }}</h6>
-                                            <small>{{ $class->position }}</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row g-1">
-                                    <div class="col-4">
-                                        <div class="border-top border-3 border-primary pt-2">
-                                            <h6 class="text-primary mb-1">Age:</h6>
-                                            <small>{{ $class->student_age }} Years</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="border-top border-3 border-success pt-2">
-                                            <h6 class="text-success mb-1">Time:</h6>
-                                            <small>{{ $class->class_time }}</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="border-top border-3 border-warning pt-2">
-                                            <h6 class="text-warning mb-1">Capacity:</h6>
-                                            <small>{{ $class->capacity }} Kids</small>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -175,13 +154,13 @@
                                         <div class="col-sm-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                                <label for="gname">Gurdian Name</label>
+                                                <label for="gname">Guardian Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
                                                 <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Gurdian Email</label>
+                                                <label for="gmail">Guardian Mobile No.</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -193,7 +172,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Child Age</label>
+                                                <label for="cage">Interested Admission Class</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -211,7 +190,7 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="{{asset("/frontend/img/appointment.jpg")}}" style="object-fit: cover;">
+                                <img class="position-absolute w-100 h-100 rounded" src="{{asset("/frontend/img/makeappoint.jpg")}}" style="object-fit: cover;">
                             </div>
                         </div>
                     </div>
@@ -226,8 +205,6 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Board Members</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
-                        eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="row g-4">
                     @foreach ($bmembers as $bmem)
@@ -252,7 +229,6 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">What Our Parents Say!</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
                 </div>
                 <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 @foreach ($testimonial as $testimonial)

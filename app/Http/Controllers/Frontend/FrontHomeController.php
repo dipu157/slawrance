@@ -13,9 +13,28 @@ use App\Models\Menu\Menu;
 use App\Models\Menu\Sub_Menu;
 use App\Models\Notice\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 
 class FrontHomeController extends Controller
 {
+    public function createStorageLink()
+    {
+        // Run the storage:link command
+        Artisan::call('storage:link');
+
+        // Get the output of the command if needed
+        $output = Artisan::output();
+
+        // You can also check if the command was successful
+        $exitCode = Artisan::call('storage:link');
+
+        if ($exitCode === 0) {
+            return 'Symbolic link created successfully.';
+        } else {
+            return 'Failed to create symbolic link.';
+        }
+    }
+    
     public function index()
     {
         $institute = InstituteInfo::query()->where('id', 1)->first();
@@ -26,7 +45,7 @@ class FrontHomeController extends Controller
         $bmembers = BoardMember::query()->where('status',1)->take(3)->get();
         $classes = Classes::query()->where('status',1)->get();
         $testimonial = Testimonial::query()->where('status',1)->take(2)->get();
-        $databaseFacilities  = Facilities::query()->where('status',1)->take(4)->get();
+        $databaseFacilities  = Facilities::query()->where('status',1)->take(5)->get();
         // Define an array of colors
         $colors = [
             "bg-primary",
@@ -41,11 +60,8 @@ class FrontHomeController extends Controller
             $combinedFacilities[] = array_merge($databaseFacility->toArray(), ["color" => $colors[$index]]);
         }
 
+
+
         return view('Frontend.landpage', compact('institute','testimonial','menus','classes','sliders','submenu','bmembers','combinedFacilities'));
-    }
-
-    public function notice()
-    {
-
     }
 }
